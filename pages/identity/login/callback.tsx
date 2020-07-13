@@ -1,7 +1,8 @@
 import React from "react";
+import LoginManager from "../../../src/LoginManager";
 
 const Callback = () => {
-  return <div>Callback yay!</div>;
+  return <LoginManager isCallback />;
 };
 
 export default Callback;

@@ -33,9 +33,7 @@ const App: React.FC<AppProps> = ({ Component, pageProps }) => {
         <StylesProvider>
           <ThemeProvider theme={localTheme}>
             <CssBaseline />
-            <LoginManager>
-              <Component {...pageProps} />
-            </LoginManager>
+            <Component {...pageProps} />
           </ThemeProvider>
         </StylesProvider>
       </MuiThemeProvider>

@@ -1,9 +1,8 @@
-import { useEffect } from "react";
+import React, { useEffect } from "react";
+import LoginManager from "../../src/LoginManager";
 
 const LoginPage = () => {
-  useEffect(() => {}, []);
-
-  return <div>It works!</div>;
+  return <LoginManager />;
 };
 
 export default LoginPage;

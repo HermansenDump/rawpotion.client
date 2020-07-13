@@ -1,16 +1,37 @@
 import { makeAuthenticator, makeUserManager } from "react-oidc";
 import { UserManagerSettings } from "oidc-client";
+import React, { FC, useEffect } from "react";
+import { AuthService } from "./lib/services/AuthService";
+import { useRouter } from "next/router";
 
-const userManagerConfig: UserManagerSettings = {
-  authority: "https://localhost:5002",
-  client_id: "rawpotion.client",
-  redirect_uri: "http://localhost:3000/identity/login/callback",
-  response_type: "code",
-  scope: "openid profile",
-};
+export interface Props {
+  isCallback: boolean;
+}
 
-const LoginManager = (props) => {
-  return props.children;
+const LoginManager: FC<Props> = (props) => {
+  const router = useRouter();
+  const [isComponentMounted, setIsComponentMounted] = React.useState<boolean>(
+    false
+  );
+
+  useEffect(() => {
+    setIsComponentMounted(true);
+  }, []);
+
+  if (!isComponentMounted) {
+    return null;
+  }
+  const authService = new AuthService();
+
+  if (props.isCallback) {
+    authService.signinRedirectCallback().then(() => {
+      router.push("/");
+    });
+  } else {
+    authService.login();
+  }
+
+  return <div />;
 };
 
 export default LoginManager;
