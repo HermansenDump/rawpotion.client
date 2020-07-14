@@ -1,14 +1,15 @@
-import { makeAuthenticator, makeUserManager } from "react-oidc";
-import { UserManagerSettings } from "oidc-client";
 import React, { FC, useEffect } from "react";
-import { AuthService } from "./lib/services/AuthService";
+import { AuthService } from "../lib/services/AuthService";
 import { useRouter } from "next/router";
+import { useDispatch } from "react-redux";
+import { addUser } from "../lib/slices/user.slice";
 
 export interface Props {
   isCallback: boolean;
 }
 
 const LoginManager: FC<Props> = (props) => {
+  const dispatch = useDispatch();
   const router = useRouter();
   const [isComponentMounted, setIsComponentMounted] = React.useState<boolean>(
     false
@@ -25,7 +26,8 @@ const LoginManager: FC<Props> = (props) => {
 
   if (props.isCallback) {
     authService.signinRedirectCallback().then(() => {
-      router.push("/");
+      dispatch(addUser());
+      router.push("/app");
     });
   } else {
     authService.login();

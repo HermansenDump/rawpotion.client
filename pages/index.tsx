@@ -1,7 +1,7 @@
 import Head from "next/head";
 import React from "react";
 import styled from "styled-components";
-import Link from "../src/Link";
+import Link from "../src/components/Link";
 
 export default () => (
   <Container>

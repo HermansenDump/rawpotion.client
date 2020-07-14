@@ -8,7 +8,10 @@ import { CssBaseline } from "@material-ui/core";
 import { AppProps } from "next/app";
 import { darkTheme, lightTheme } from "../src/theme";
 import { ThemeProvider } from "styled-components";
-import LoginManager from "../src/LoginManager";
+import { Provider } from "react-redux";
+import { useStore } from "../src/lib/slices/store";
+import { persistStore } from "redux-persist";
+import { PersistGate } from "redux-persist/integration/react";
 
 const App: React.FC<AppProps> = ({ Component, pageProps }) => {
   React.useEffect(() => {
@@ -19,6 +22,8 @@ const App: React.FC<AppProps> = ({ Component, pageProps }) => {
   }, []);
 
   const [localTheme, setLocalTheme] = React.useState(darkTheme);
+  const store = useStore(pageProps.initialReduxState);
+  const persistor = persistStore(store);
 
   return (
     <>
@@ -33,7 +38,14 @@ const App: React.FC<AppProps> = ({ Component, pageProps }) => {
         <StylesProvider>
           <ThemeProvider theme={localTheme}>
             <CssBaseline />
-            <Component {...pageProps} />
+            <Provider store={store}>
+              <PersistGate
+                loading={<Component {...pageProps} />}
+                persistor={persistor}
+              >
+                <Component {...pageProps} />
+              </PersistGate>
+            </Provider>
           </ThemeProvider>
         </StylesProvider>
       </MuiThemeProvider>

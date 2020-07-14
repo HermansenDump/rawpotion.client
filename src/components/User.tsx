@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { AuthService } from "./lib/services/AuthService";
+import { AuthService } from "../lib/services/AuthService";
 
 const User = () => {
   const [isMounted, setIsMounted] = useState(false);
