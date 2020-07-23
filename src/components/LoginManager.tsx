@@ -11,26 +11,32 @@ export interface Props {
 const LoginManager: FC<Props> = (props) => {
   const dispatch = useDispatch();
   const router = useRouter();
+  const [authService, setAuthService] = React.useState<AuthService>()
   const [isComponentMounted, setIsComponentMounted] = React.useState<boolean>(
     false
   );
 
   useEffect(() => {
     setIsComponentMounted(true);
+
+    if (!authService) {
+      setAuthService(new AuthService());
+    }
   }, []);
 
   if (!isComponentMounted) {
     return null;
   }
-  const authService = new AuthService();
 
-  if (props.isCallback) {
-    authService.signinRedirectCallback().then(() => {
-      dispatch(addUser());
-      router.push("/app");
-    });
-  } else {
+  if (!props.isCallback) {
     authService.login();
+  } else {
+    authService.signinRedirectCallback().then(() => {
+      authService.getUser().then((user) => {
+        dispatch(addUser(user));
+        router.push("/app");
+      });
+    });
   }
 
   return <div />;

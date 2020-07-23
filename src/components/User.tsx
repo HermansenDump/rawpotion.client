@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { AuthService } from "../lib/services/AuthService";
 
-const User = () => {
+const User = (props) => {
   const [isMounted, setIsMounted] = useState(false);
   const [user, setUser] = useState(null);
   const [authService, setAuthService] = useState(null);
@@ -30,7 +30,7 @@ const User = () => {
     return null;
   }
 
-  return <div>{JSON.stringify(user)}</div>;
+  return props.children;
 };
 
 export default User;

@@ -1,31 +1,37 @@
-import { Log, UserManager } from "oidc-client";
+import {Log, UserManager} from "oidc-client";
 
 export class AuthService {
-  private userManager: UserManager;
-  constructor() {
-    const settings = {
-      authority: "https://localhost:5001/",
-      client_id: "rawpotion.client",
-      redirect_uri: "http://localhost:3000/identity/login/callback",
-      response_type: "code",
-      scope: "openid profile",
-    };
+    private userManager: UserManager;
 
-    this.userManager = new UserManager(settings);
+    constructor() {
+        const settings = {
+            authority: "https://localhost:5001/",
+            client_id: "rawpotion.client",
+            redirect_uri: "http://localhost:3000/identity/login/callback",
+            response_type: "code",
+            scope: "openid profile",
+        };
 
-    Log.logger = console;
-    Log.level = Log.INFO;
-  }
+        this.userManager = new UserManager(settings);
 
-  public login() {
-    return this.userManager.signinRedirect();
-  }
+        Log.logger = console;
+        Log.level = Log.INFO;
+    }
 
-  async signinRedirectCallback() {
-    await new UserManager({ response_mode: "query" }).signinRedirectCallback();
-  }
+    public login() {
+        return this.userManager.signinRedirect();
+    }
 
-  async getUser() {
-    return this.userManager.getUser();
-  }
+    async signinRedirectCallback() {
+        await this.userManager.signinRedirectCallback()
+            .then(() => {
+                console.log("User is logged in")
+            }, error => {
+                console.error(error);
+            });
+    }
+
+    async getUser() {
+        return this.userManager.getUser();
+    }
 }

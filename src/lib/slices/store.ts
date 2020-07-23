@@ -2,33 +2,18 @@ import {
   AnyAction,
   combineReducers,
   configureStore,
-  EnhancedStore,
   Reducer,
 } from "@reduxjs/toolkit";
 import authReducer, { AuthState } from "./user.slice";
 import { useMemo } from "react";
-import { persistReducer } from "redux-persist";
-import storage from "redux-persist/es/storage";
 import { useDispatch } from "react-redux";
+import auth from "./user.slice";
 
-const persistConfig = {
-  key: "auth",
-  storage,
-};
-
-const persistedReducer = persistReducer(persistConfig, authReducer);
+let store;
 
 const rootReducer = combineReducers({
-  persistedReducer,
+  auth,
 });
-
-let store:
-  | EnhancedStore<
-      { persistedReducer: Reducer<AuthState, AnyAction> },
-      AnyAction,
-      any
-    >
-  | undefined;
 
 const makeStore = (initialState: any) => {
   return configureStore({
@@ -36,7 +21,7 @@ const makeStore = (initialState: any) => {
     devTools: true,
     preloadedState: initialState,
     middleware: (getDefaultMiddleware) =>
-      getDefaultMiddleware({ serializableCheck: false }),
+      getDefaultMiddleware(),
   });
 };
 

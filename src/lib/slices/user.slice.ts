@@ -10,15 +10,13 @@ import { User } from "oidc-client";
 
 export const addUser = createAsyncThunk(
   "auth/addCurrentUser",
-  async (_, thunkApi) => {
+  async (user: User, thunkApi) => {
     try {
-      const response = new AuthService().getUser();
-
-      if (!response) {
+      if (!user) {
         return thunkApi.rejectWithValue({ error: "failed to fetch user" });
       }
 
-      return response;
+      return user;
     } catch (error) {
       return thunkApi.rejectWithValue({ error: error.message });
     }
