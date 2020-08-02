@@ -3,6 +3,8 @@ import React from "react";
 import Document, { Head, Html, Main, NextScript } from "next/document";
 import { lightTheme } from "../src/theme";
 import { ServerStyleSheet } from "styled-components";
+import { ApolloClient, ApolloProvider } from "@apollo/client";
+import {createApolloClient} from "../src/lib/graphql/graphql";
 
 export default class RawpotionDocument extends Document {
   render() {
@@ -58,7 +60,11 @@ RawpotionDocument.getInitialProps = async (ctx) => {
   ctx.renderPage = () =>
     originalRenderPage({
       enhanceApp: (App) => (props) =>
-        styledSheets.collectStyles(materialSheets.collect(<App {...props} />)),
+        styledSheets.collectStyles(
+          materialSheets.collect(
+              <App {...props} />
+          )
+        ),
     });
 
   const initialProps = await Document.getInitialProps(ctx);

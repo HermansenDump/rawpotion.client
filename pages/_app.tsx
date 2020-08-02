@@ -10,6 +10,10 @@ import { darkTheme, lightTheme } from "../src/theme";
 import { ThemeProvider } from "styled-components";
 import { Provider } from "react-redux";
 import { useStore } from "../src/lib/slices/store";
+import { PersistGate } from "redux-persist/integration/react";
+import persistStore from "redux-persist/lib/persistStore";
+import { useApollo } from "../src/lib/graphql/graphql";
+import {ApolloProvider} from "@apollo/react-hooks";
 
 const App: React.FC<AppProps> = ({ Component, pageProps }) => {
   React.useEffect(() => {
@@ -21,6 +25,8 @@ const App: React.FC<AppProps> = ({ Component, pageProps }) => {
 
   const [localTheme, setLocalTheme] = React.useState(darkTheme);
   const store = useStore(pageProps.initialReduxState);
+  const apolloClient = useApollo(pageProps.initialApolloState);
+  const persistor = persistStore(store);
 
   return (
     <>
@@ -36,7 +42,14 @@ const App: React.FC<AppProps> = ({ Component, pageProps }) => {
           <ThemeProvider theme={localTheme}>
             <CssBaseline />
             <Provider store={store}>
-                <Component {...pageProps} />
+              <PersistGate
+                loading={<Component {...pageProps} />}
+                persistor={persistor}
+              >
+                <ApolloProvider client={apolloClient}>
+                  <Component {...pageProps} />
+                </ApolloProvider>
+              </PersistGate>
             </Provider>
           </ThemeProvider>
         </StylesProvider>

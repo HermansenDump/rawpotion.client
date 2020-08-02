@@ -1,18 +1,24 @@
-import {
-  AnyAction,
-  combineReducers,
-  configureStore,
-  Reducer,
-} from "@reduxjs/toolkit";
-import authReducer, { AuthState } from "./user.slice";
-import { useMemo } from "react";
-import { useDispatch } from "react-redux";
-import auth from "./user.slice";
+import { AnyAction, combineReducers, configureStore } from "@reduxjs/toolkit";
+import { Reducer, useMemo } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import auth, { AuthState } from "./user.slice";
+import storage from "redux-persist/lib/storage";
+import persistReducer from "redux-persist/lib/persistReducer";
 
 let store;
 
+const persistConfig = {
+  key: "auth",
+  storage: storage,
+  whitelist: ["user"],
+};
+
+export const persistedAuthReducer: Reducer<
+  AuthState,
+  AnyAction
+> = persistReducer(persistConfig, auth);
 const rootReducer = combineReducers({
-  auth,
+  auth: persistedAuthReducer,
 });
 
 const makeStore = (initialState: any) => {
@@ -21,7 +27,7 @@ const makeStore = (initialState: any) => {
     devTools: true,
     preloadedState: initialState,
     middleware: (getDefaultMiddleware) =>
-      getDefaultMiddleware(),
+      getDefaultMiddleware({ serializableCheck: false }),
   });
 };
 

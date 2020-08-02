@@ -7,6 +7,9 @@ import styled from "styled-components";
 
 const IsLoggedIn = () => (
   <div>
+    <SpacedAnchor href="/app/groups" variant="subtitle1">
+      Groups
+    </SpacedAnchor>
     <Anchor href="/app/profile" variant="subtitle1">
       Profile
     </Anchor>
@@ -22,14 +25,16 @@ const IsNotLoggedIn = () => (
 );
 
 const DashboardWrapper = (props) => {
-  const { user } = useSelector((state: RootState) => state.auth);
+  const user = useSelector<RootState>((state) => state.auth.user);
 
   return (
     <div>
       <AppBar>
         <Container>
           <Toolbar>
-            <Title href="/app" variant="h6">Rawpotion</Title>
+            <Title href="/app" variant="h6">
+              Rawpotion
+            </Title>
             {user && IsLoggedIn()}
             {!user && IsNotLoggedIn()}
           </Toolbar>
@@ -54,6 +59,10 @@ const Anchor = styled(Link)`
   :active {
     text-decoration: underline;
   }
+`;
+
+const SpacedAnchor = styled(Anchor)`
+  margin-right: 40px;
 `;
 
 const Title = styled(Anchor)`
