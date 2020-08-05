@@ -1,4 +1,3 @@
-import { User } from "oidc-client";
 import React from "react";
 import {
   Card,
@@ -9,7 +8,7 @@ import {
 } from "@material-ui/core";
 
 interface Props {
-  user: User;
+  user: any;
 }
 
 const Profile: React.FC<Props> = ({ user }) => (

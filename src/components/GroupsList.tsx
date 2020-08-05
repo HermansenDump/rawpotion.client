@@ -1,7 +1,6 @@
-import { NetworkStatus, useQuery } from "@apollo/client";
-import { ALL_GROUPS_QUERY } from "../lib/graphql/groups";
+import React from "react";
 
-const GroupsList = ({groups}) => {
+const GroupsList = ({ groups }: any) => {
   // const { loading, error, data, networkStatus } = useQuery(ALL_GROUPS_QUERY, {
   //   notifyOnNetworkStatusChange: true,
   // });
@@ -16,7 +15,7 @@ const GroupsList = ({groups}) => {
   // console.log(groups);
   return (
     <ul>
-      {groups.map((group: { name: string, id: string }) => (
+      {groups.map((group: { name: string; id: string }) => (
         <li key={group.id}>{group.name}</li>
       ))}
     </ul>

@@ -1,8 +1,7 @@
-import React from "react";
-import { AppBar, Box, Container, Toolbar, Typography } from "@material-ui/core";
+import React, { FC } from "react";
+import { AppBar, Box, Container, Link, Toolbar } from "@material-ui/core";
 import { useSelector } from "react-redux";
-import { RootState } from "../../lib/slices/store";
-import Link from "../Link";
+import { RootState } from "../../lib/state/store";
 import styled from "styled-components";
 
 const IsLoggedIn = () => (
@@ -24,7 +23,7 @@ const IsNotLoggedIn = () => (
   </div>
 );
 
-const DashboardWrapper = (props) => {
+const DashboardWrapper: FC = (props) => {
   const user = useSelector<RootState>((state) => state.auth.user);
 
   return (
