@@ -1,0 +1,8 @@
+services:
+  client:
+    environments:
+      restore:
+        command: 'yarn'
+      dev: 
+        command: 'yarn start'
+
