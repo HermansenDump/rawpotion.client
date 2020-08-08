@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="BranchesTreeState">
     <expand>
       <path>
@@ -20,47 +23,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0d4f05e1-bbcb-445f-9885-2e80453a3146" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/lib/external/apollo.wrapper.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/lib/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/lib/state/persist/authPersistConfig.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/lib/state/reducers.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/lib/state/redux.wrapper.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/lib/themes/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/lib/themes/material.wrapper.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/next-env.d.ts" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/_app.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/_document.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/app/groups/[groupName].tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/app/groups/create.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/app/groups/index.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/app/groups/join/[slug].tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/app/groups/join/index.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/app/index.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/app/profile.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/identity/login.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/identity/login/callback.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/index.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/favicon.ico" beforeDir="false" afterPath="$PROJECT_DIR$/public/favicon.ico" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/GroupsList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/GroupsList.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Link.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/LoginManager.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Profile.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Profile.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/User.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/breadcrumbs.container.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/breadcrumbs.container.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/layouts/dashboard.wrapper.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/layouts/dashboard.wrapper.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/styled/centered.paragraph.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/styled/centered.paragraph.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/graphql/graphql.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/external/api/graphql.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/graphql/groups.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/external/api/queries/groups.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/services/AuthService.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/slices/store.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/state/store.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/slices/user.slice.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/state/slices/user.slice.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/theme.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/state/slices/user.slice.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/state/slices/user.slice.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -102,7 +68,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="TERMINAL_CUSTOM_COMMANDS_GOT_IT" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$USER_HOME$/AppData/Local/Yarn/Data/global/node_modules/prettier" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -114,11 +80,11 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="yarn" />
     <property name="prettierjs.PrettierConfiguration.NodeInterpreter" value="node" />
-    <property name="prettierjs.PrettierConfiguration.Package" value="C:\Users\herma\git\rawpotion.client\node_modules\prettier" />
+    <property name="prettierjs.PrettierConfiguration.Package" value="$USER_HOME$/.config/yarn/global/node_modules/prettier" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="run.prettier.on.save" value="true" />
-    <property name="settings.editor.selected.configurable" value="com.maddyhome.idea.vim.ui.VimEmulationConfigurable" />
-    <property name="ts.external.directory.path" value="C:\Users\herma\git\rawpotion.client\node_modules\typescript\lib" />
+    <property name="settings.editor.selected.configurable" value="settings.javascript.prettier" />
+    <property name="ts.external.directory.path" value="$PROJECT_DIR$/node_modules/typescript/lib" />
   </component>
   <component name="RecentsManager">
     <key name="es6.move.members.recent.items">
@@ -148,6 +114,7 @@
       <method v="2" />
     </configuration>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="project-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -175,11 +142,12 @@
       <workItem from="1596650909977" duration="328000" />
       <workItem from="1596651250061" duration="807000" />
       <workItem from="1596652069705" duration="5633000" />
+      <workItem from="1596911356994" duration="3337000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="2" />
+    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -230,21 +198,25 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1061" y="456" key="FileChooserDialogImpl/3840.0.2560.1400/0.0.2560.1400/-1920.1074.1920.1040@0.0.2560.1400" timestamp="1596653581838" />
-    <state width="2539" height="578" key="GridCell.Tab.0.bottom" timestamp="1596650517091">
-      <screen x="0" y="0" width="2560" height="1400" />
+    <state width="1895" height="274" key="GridCell.Tab.0.bottom" timestamp="1596912847492">
+      <screen x="0" y="0" width="1920" height="1080" />
     </state>
+    <state width="1895" height="274" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1596912847492" />
     <state width="2539" height="578" key="GridCell.Tab.0.bottom/3840.0.2560.1400/0.0.2560.1400/-1920.1074.1920.1040@0.0.2560.1400" timestamp="1596650517091" />
-    <state width="2539" height="578" key="GridCell.Tab.0.center" timestamp="1596650517091">
-      <screen x="0" y="0" width="2560" height="1400" />
+    <state width="1895" height="274" key="GridCell.Tab.0.center" timestamp="1596912847491">
+      <screen x="0" y="0" width="1920" height="1080" />
     </state>
+    <state width="1895" height="274" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1596912847491" />
     <state width="2539" height="578" key="GridCell.Tab.0.center/3840.0.2560.1400/0.0.2560.1400/-1920.1074.1920.1040@0.0.2560.1400" timestamp="1596650517091" />
-    <state width="2539" height="578" key="GridCell.Tab.0.left" timestamp="1596650517091">
-      <screen x="0" y="0" width="2560" height="1400" />
+    <state width="1895" height="274" key="GridCell.Tab.0.left" timestamp="1596912847489">
+      <screen x="0" y="0" width="1920" height="1080" />
     </state>
+    <state width="1895" height="274" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1596912847489" />
     <state width="2539" height="578" key="GridCell.Tab.0.left/3840.0.2560.1400/0.0.2560.1400/-1920.1074.1920.1040@0.0.2560.1400" timestamp="1596650517091" />
-    <state width="2539" height="578" key="GridCell.Tab.0.right" timestamp="1596650517091">
-      <screen x="0" y="0" width="2560" height="1400" />
+    <state width="1895" height="274" key="GridCell.Tab.0.right" timestamp="1596912847491">
+      <screen x="0" y="0" width="1920" height="1080" />
     </state>
+    <state width="1895" height="274" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1596912847491" />
     <state width="2539" height="578" key="GridCell.Tab.0.right/3840.0.2560.1400/0.0.2560.1400/-1920.1074.1920.1040@0.0.2560.1400" timestamp="1596650517091" />
     <state width="2539" height="484" key="GridCell.Tab.1.bottom" timestamp="1596480024170">
       <screen x="0" y="0" width="2560" height="1400" />
@@ -278,17 +250,19 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="2539" height="484" key="GridCell.Tab.2.right/3840.0.2560.1400/0.0.2560.1400/-1920.1074.1920.1040@0.0.2560.1400" timestamp="1596480024170" />
-    <state x="782" y="346" key="SettingsEditor" timestamp="1596652550897">
-      <screen x="0" y="0" width="2560" height="1400" />
+    <state x="587" y="267" key="SettingsEditor" timestamp="1596912999156">
+      <screen x="0" y="0" width="1920" height="1080" />
     </state>
+    <state x="587" y="267" key="SettingsEditor/0.0.1920.1080@0.0.1920.1080" timestamp="1596912999156" />
     <state x="782" y="346" key="SettingsEditor/3840.0.2560.1400/0.0.2560.1400/-1920.1074.1920.1040@0.0.2560.1400" timestamp="1596652550897" />
     <state x="1073" y="559" key="scopes" timestamp="1595969813590">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1073" y="559" key="scopes/3840.0.2560.1400/0.0.2560.1400/-1920.1074.1920.1040@0.0.2560.1400" timestamp="1595969813590" />
-    <state x="943" y="315" width="672" height="678" key="search.everywhere.popup" timestamp="1596657720991">
-      <screen x="0" y="0" width="2560" height="1400" />
+    <state x="707" y="243" width="672" height="524" key="search.everywhere.popup" timestamp="1596912984292">
+      <screen x="0" y="0" width="1920" height="1080" />
     </state>
+    <state x="707" y="243" width="672" height="524" key="search.everywhere.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1596912984292" />
     <state x="943" y="315" width="672" height="678" key="search.everywhere.popup/3840.0.2560.1400/0.0.2560.1400/-1920.1074.1920.1040@0.0.2560.1400" timestamp="1596657720991" />
   </component>
 </project>

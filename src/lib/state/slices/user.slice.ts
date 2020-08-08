@@ -8,7 +8,18 @@ import {
 
 export const addUser = createAsyncThunk(
   "auth/addCurrentUser",
-  async (user: string, thunkApi) => {
+  async (token: string, thunkApi) => {
+    let data: any;
+    try {
+        const dataB64 = atob(token);
+        data = JSON.parse(dataB64);
+    }
+    catch(error) {
+        console.error(error)
+    }
+
+    const user = data;
+
     try {
       if (!user) {
         return thunkApi.rejectWithValue({ error: "failed to fetch user" });
